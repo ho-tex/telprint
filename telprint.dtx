@@ -1,13 +1,13 @@
 % \iffalse meta-comment
 %
 % File: telprint.dtx
-% Version: 2016/05/16 v1.11
+% Version: 2024-07-26 v1.12
 % Info: Format German phone numbers
 %
 % Copyright (C)
 %    1996, 1997, 2004-2008 Heiko Oberdiek
-%    2016-2019 Oberdiek Package Support Group
-%    https://github.com/ho-tex/oberdiek/issues
+%    2016-2024 Oberdiek Package Support Group
+%    https://github.com/ho-tex/telprint/issues
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -23,7 +23,7 @@
 %
 % The Current Maintainers of this work are
 % Heiko Oberdiek and the Oberdiek Package Support Group
-% https://github.com/ho-tex/oberdiek/issues
+% https://github.com/ho-tex/telprint/issues
 %
 % The Base Interpreter refers to any `TeX-Format',
 % because some files are installed in TDS:tex/generic//.
@@ -83,7 +83,7 @@
 \input docstrip.tex
 \Msg{************************************************************************}
 \Msg{* Installation}
-\Msg{* Package: telprint 2016/05/16 v1.11 Format German phone numbers (HO)}
+\Msg{* Package: telprint 2024-07-26 v1.12 Format German phone numbers (HO)}
 \Msg{************************************************************************}
 
 \keepsilent
@@ -95,11 +95,11 @@
 This is a generated file.
 
 Project: telprint
-Version: 2016/05/16 v1.11
+Version: 2024-07-26 v1.12
 
 Copyright (C)
    1996, 1997, 2004-2008 Heiko Oberdiek
-   2016-2019 Oberdiek Package Support Group
+   2016-2024 Oberdiek Package Support Group
 
 This work may be distributed and/or modified under the
 conditions of the LaTeX Project Public License, either
@@ -115,7 +115,7 @@ This work has the LPPL maintenance status "maintained".
 
 The Current Maintainers of this work are
 Heiko Oberdiek and the Oberdiek Package Support Group
-https://github.com/ho-tex/oberdiek/issues
+https://github.com/ho-tex/telprint/issues
 
 
 The Base Interpreter refers to any `TeX-Format',
@@ -162,7 +162,7 @@ and the derived files
 %<*driver>
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesFile{telprint.drv}%
-  [2016/05/16 v1.11 Format German phone numbers (HO)]%
+  [2024-07-26 v1.12 Format German phone numbers (HO)]%
 \documentclass{ltxdoc}
 \usepackage{holtxdoc}[2011/11/22]
 \usepackage[ngerman,english]{babel}
@@ -177,9 +177,9 @@ and the derived files
 % \GetFileInfo{telprint.drv}
 %
 % \title{The \xpackage{telprint} package}
-% \date{2016/05/16 v1.11}
+% \date{2024-07-26 v1.12}
 % \author{Heiko Oberdiek\thanks
-% {Please report any issues at \url{https://github.com/ho-tex/oberdiek/issues}}}
+% {Please report any issues at \url{https://github.com/ho-tex/telprint/issues}}}
 %
 % \maketitle
 %
@@ -397,7 +397,7 @@ and the derived files
   \fi
 \expandafter\x\csname ver@telprint.sty\endcsname
 \ProvidesPackage{telprint}%
-  [2016/05/16 v1.11 Format German phone numbers (HO)]%
+  [2024-07-26 v1.12 Format German phone numbers (HO)]%
 %    \end{macrocode}
 %
 % \subsection{Catcodes}
@@ -467,7 +467,11 @@ and the derived files
 %    \begin{macro}{\telspace}
 %    \begin{macrocode}
 \DeclareRobustCommand*{\telspace}[1]{\def\TELspace{#1}}
-\telspace{{}$\,${}}
+\ifcsname documentclass\endcsname 
+ \telspace{\,}
+\else
+ \telspace{{}$\,${}}
+\fi
 %    \end{macrocode}
 %    \end{macro}
 %    \begin{macro}{\telhyphen}
@@ -619,26 +623,6 @@ and the derived files
 % \item[\CTAN{macros/latex/contrib/oberdiek/telprint.pdf}] Documentation.
 % \end{description}
 %
-%
-% \paragraph{Bundle.} All the packages of the bundle `oberdiek'
-% are also available in a TDS compliant ZIP archive. There
-% the packages are already unpacked and the documentation files
-% are generated. The files and directories obey the TDS standard.
-% \begin{description}
-% \item[\CTANinstall{install/macros/latex/contrib/oberdiek.tds.zip}]
-% \end{description}
-% \emph{TDS} refers to the standard ``A Directory Structure
-% for \TeX\ Files'' (\CTANpkg{tds}). Directories
-% with \xfile{texmf} in their name are usually organized this way.
-%
-% \subsection{Bundle installation}
-%
-% \paragraph{Unpacking.} Unpack the \xfile{oberdiek.tds.zip} in the
-% TDS tree (also known as \xfile{texmf} tree) of your choice.
-% Example (linux):
-% \begin{quote}
-%   |unzip oberdiek.tds.zip -d ~/texmf|
-% \end{quote}
 %
 % \subsection{Package installation}
 %
@@ -835,6 +819,9 @@ and the derived files
 %   \begin{Version}{2016/05/16 v1.11}
 %   \item
 %     Documentation updates.
+%   \end{Version}
+%   \begin{Version}{2024-07-26 v1.12}
+%   \item Avoid math in \cs{telspace} for better tagging support.
 %   \end{Version}
 % \end{History}
 %
