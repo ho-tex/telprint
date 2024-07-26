@@ -6,8 +6,8 @@ module = "telprint"
 textfiles = {"README.md"}
 unpackfiles = {'telprint.dtx'}
 
-
-checkconfigs = {"config-plain"}
+checkengines={"pdftex"}
+checkconfigs = {"build","config-plain"}
 
  
 packtdszip  = false
