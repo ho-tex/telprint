@@ -34,8 +34,8 @@
 %    telprint-test1.tex.
 %
 % Distribution:
-%    CTAN:macros/latex/contrib/oberdiek/telprint.dtx
-%    CTAN:macros/latex/contrib/oberdiek/telprint.pdf
+%    CTAN:macros/latex/contrib/telprint/telprint.dtx
+%    CTAN:macros/latex/contrib/telprint/telprint.pdf
 %
 % Unpacking:
 %    (a) If telprint.ins is present:
@@ -64,9 +64,9 @@
 %       pdflatex telprint.dtx
 %
 % Installation:
-%    TDS:tex/generic/oberdiek/telprint.sty
-%    TDS:doc/latex/oberdiek/telprint.pdf
-%    TDS:source/latex/oberdiek/telprint.dtx
+%    TDS:tex/generic/telprint/telprint.sty
+%    TDS:doc/latex/telprint/telprint.pdf
+%    TDS:source/latex/telprint/telprint.dtx
 %
 %<*ignore>
 \begingroup
@@ -132,9 +132,9 @@ and the derived files
 \generate{%
   \file{telprint.ins}{\from{telprint.dtx}{install}}%
   \file{telprint.drv}{\from{telprint.dtx}{driver}}%
-  \usedir{tex/generic/oberdiek}%
+  \usedir{tex/generic/telprint}%
   \file{telprint.sty}{\from{telprint.dtx}{package}}%
-%  \usedir{doc/latex/oberdiek/test}%
+%  \usedir{doc/latex/telprint/test}%
 %  \file{telprint-test1.tex}{\from{telprint.dtx}{test1}}%
 }
 
@@ -467,7 +467,7 @@ and the derived files
 %    \begin{macro}{\telspace}
 %    \begin{macrocode}
 \DeclareRobustCommand*{\telspace}[1]{\def\TELspace{#1}}
-\ifcsname documentclass\endcsname 
+\ifcsname LaTeXReleaseInfo\endcsname 
  \telspace{\,}
 \else
  \telspace{{}$\,${}}
@@ -619,8 +619,8 @@ and the derived files
 % \paragraph{Package.} This package is available on
 % CTAN\footnote{\CTANpkg{telprint}}:
 % \begin{description}
-% \item[\CTAN{macros/latex/contrib/oberdiek/telprint.dtx}] The source file.
-% \item[\CTAN{macros/latex/contrib/oberdiek/telprint.pdf}] Documentation.
+% \item[\CTAN{macros/latex/contrib/telprint/telprint.dtx}] The source file.
+% \item[\CTAN{macros/latex/contrib/telprint/telprint.pdf}] Documentation.
 % \end{description}
 %
 %
@@ -639,9 +639,9 @@ and the derived files
 % \begin{quote}
 % \def\t{^^A
 % \begin{tabular}{@{}>{\ttfamily}l@{ $\rightarrow$ }>{\ttfamily}l@{}}
-%   telprint.sty & tex/generic/oberdiek/telprint.sty\\
-%   telprint.pdf & doc/latex/oberdiek/telprint.pdf\\
-%   telprint.dtx & source/latex/oberdiek/telprint.dtx\\
+%   telprint.sty & tex/generic/telprint/telprint.sty\\
+%   telprint.pdf & doc/latex/telprint/telprint.pdf\\
+%   telprint.dtx & source/latex/telprint/telprint.dtx\\
 % \end{tabular}^^A
 % }^^A
 % \sbox0{\t}^^A
